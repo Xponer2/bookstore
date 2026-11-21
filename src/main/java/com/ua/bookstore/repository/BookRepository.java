@@ -9,4 +9,6 @@ public interface BookRepository {
     List<Book> findAll();
     Optional<Book> findById(Long id);
     Book save(Book book);
+    List<Book> findByGenre(String genre);
+    boolean deleteById(Long id);
 }
