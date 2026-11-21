@@ -72,7 +72,5 @@ curl -i -X PUT http://localhost:8080/api/books/1 \
 # Видалити книгу -> 204 (404 - no id)
 
 ```bash
-curl -i -X PUT http://localhost:8080/api/books/1 \
-  -H "Content-Type: application/json" \
-  --data-binary @requests/update-book.json
+curl -i -X DELETE http://localhost:8080/api/books/2
 ```
