@@ -33,6 +33,13 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
+    public BookDetailDto findById(Long id) {
+        Book book = repository.findById(id)
+                .orElseThrow(() -> new BookNotFoundException(id));
+        return mapper.toDetail(book);
+    }
+
+    @Override
     public BookDetailDto create(BookRequest request) {
         Book book = mapper.toDomain(request);
         book.setId(null);
